@@ -1,6 +1,17 @@
 # docker compose practice
 
 ## Manual Installation
+```bash
+git clone https://github.com/sujalc879/docker-compose-practice.git
+cd docker-compose-practice
+bun install
+docker run -e POSTGRES_PASSWORD=password -d -p 5432:5432 postgres
+bun run dev
+```
+
+## Docker
+
+## Docker Compose
 
 ## Run locally
 
