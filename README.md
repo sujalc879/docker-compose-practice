@@ -6,6 +6,9 @@ git clone https://github.com/sujalc879/docker-compose-practice.git
 cd docker-compose-practice
 bun install
 docker run -e POSTGRES_PASSWORD=password -d -p 5432:5432 postgres
+export DATABASE_URL="postgresql://postgres:password@localhost:5432/postgres"
+bun run contract:emit
+bun run db:init
 bun run dev
 ```
 
