@@ -25,7 +25,7 @@ app.post("/", async (req, res) => {
       username
     });
   
-    res.json({ message : "post endpoint", user});
+    res.json({ message : "user is created successfully", user});
     
   } catch (error) {
     res.status(400).json({ message : "this email is already exist", error});

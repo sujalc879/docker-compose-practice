@@ -14,7 +14,8 @@ bun run dev
 
 ## Docker
 ```bash
-docker run -d -e POSTGRES_PASSWORD=password -p 5432:5432 postgres
+docker volume create postgres_data
+docker run -d -e POSTGRES_PASSWORD=password -v postgres_data:/var/lib/postgresql -p 5432:5432 postgres:latest
 docker run -d -p 3000:3000 dockerr:latest
 ```
 
