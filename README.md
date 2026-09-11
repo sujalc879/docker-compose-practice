@@ -13,6 +13,11 @@ bun run dev
 ```
 
 ## Docker
+```bash
+docker run -d -e POSTGRES_PASSWORD=password -p 5432:5432 postgres
+docker run -d -p 3000:3000 dockerr:latest
+```
+
 
 ## Docker Compose
 
