@@ -21,6 +21,9 @@ docker run -d -p 3000:3000 dockerr:latest
 
 
 ## Docker Compose
+```bash
+docker compose up --build
+```
 
 ## Run locally
 
