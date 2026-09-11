@@ -5,8 +5,15 @@ const port = Number(process.env.PORT ?? 3000);
 
 app.use(express.json());
 
-app.get("/", (req, res) => {
-  res.json({ message : "get endpoint"});
+app.get("/", async (req, res) => {
+
+  try {
+    const users = await db.orm.public.User.all();
+    res.json({ users });
+    
+  } catch (error) {
+    res.json({ message : "there is no user yet" });
+  }
 });
 
 app.post("/", async (req, res) => {
@@ -21,7 +28,7 @@ app.post("/", async (req, res) => {
     res.json({ message : "post endpoint", user});
     
   } catch (error) {
-    res.status(400).json({ message : "this email is already exist"});
+    res.status(400).json({ message : "this email is already exist", error});
   }
 });
 
